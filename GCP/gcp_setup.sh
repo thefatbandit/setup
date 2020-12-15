@@ -12,12 +12,13 @@ sudo adduser demo
 sudo usermod -aG sudo,adm demo
 
 # ===========================================================================
-#DISPLAY:
+# DISPLAY:
 # Download the client in your Laptop
 # Nomachine Client: https://www.nomachine.com/download/download&id=2
 echo "========Installing NOMACHINE========="
 
 # sudo -i
+
 
 sudo apt-get update -y
 sudo apt-get upgrade -y
@@ -30,7 +31,8 @@ sudo -i vim /etc/ssh/sshd_config
 # Update
 sudo apt update -y
 sudo apt -y install wget
-wget https://download.nomachine.com/download/6.11/Linux/nomachine_6.11.2_1_amd64.deb
+wget https://download.nomachine.com/download/6.12/Linux/nomachine_6.12.3_7_amd64.deb
+
 sudo dpkg -i no*.deb
 rm no*.deb
 
@@ -69,14 +71,14 @@ conda update conda -y
 # ===========================================================================
 # Carla
 
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 304F9BC29914A77D
-sudo add-apt-repository "deb [arch=amd64 trusted=yes] http://dist.carla.org/carla-0.9.8/ all main"
-sudo apt-get update -y
-sudo apt-get install carla-simulator -y
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 304F9BC29914A77D
+# sudo add-apt-repository "deb [arch=amd64 trusted=yes] http://dist.carla.org/carla-0.9.8/ all main"
+# sudo apt-get update -y
+# sudo apt-get install carla-simulator -y
 
-cd ~
-conda create -n carla python=3.6 -y
-source activate carla
-pip install pygame numpy
+# cd ~
+# conda create -n carla python=3.6 -y
+# source activate carla
+# pip install pygame numpy
 
-sudo reboot
+# sudo reboot

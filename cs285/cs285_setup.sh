@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "First arg: $1"
 # Cloning Homework: 
 echo "========	 Cloning Assignments Repo 	========="
 cd ~
