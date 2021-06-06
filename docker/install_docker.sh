@@ -36,3 +36,18 @@ add_docker_to_sudo()
 install_docker
 echo -en "\n\nAdding docker to sudo group\n\n"
 add_docker_to_sudo
+
+echo -en "\n\nInstalling nvidia-docker-runtime\n\n"
+sudo apt-get install nvidia-container-runtime -y
+sudo tee /etc/docker/daemon.json <<EOF
+{
+    "default-runtime": "nvidia"
+    "runtimes": {
+        "nvidia": {
+            "path": "/usr/bin/nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    }
+}
+EOF 
+sudo pkill -SIGHUP dockerd
